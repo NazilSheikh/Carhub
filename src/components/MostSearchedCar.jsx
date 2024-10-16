@@ -68,7 +68,7 @@ function MostSearchedCar() {
   <CarouselContent >
       {CarList.map((car , index)=>(
   // this basis means in 1 line how many card to show that is 4 cards
-<CarouselItem className="lg:basis-1/4 md:basis-1/2 sm:basis-1/1">
+<CarouselItem className="flex-shrink-0 lg:basis-1/4 md:basis-1/2 sm:basis-1/1 ">
 
        <CarItem key={index} car={car}/>
     </CarouselItem>       
@@ -82,67 +82,4 @@ function MostSearchedCar() {
     </div>
   )
 }
-
 export default MostSearchedCar
-
-
-// import React, { useEffect, useState } from 'react';
-// import CarItem from './CarItem';
-// import { db } from './../../configs';
-// import { CarImages, CarListing } from './../../configs/schema';
-// import { desc, eq } from 'drizzle-orm';
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from "@/components/ui/carousel";
-// import Service from '@/Shared/Service';
-
-// function MostSearchedCar() {
-//   const [CarList, setCarList] = useState([]);
-
-//   useEffect(() => {
-//     GetUserCarListings();
-//   }, []);
-
-//   const GetUserCarListings = async () => {
-//     const result = await db
-//       .select()
-//       .from(CarListing)
-//       .leftJoin(CarImages, eq(CarListing.id, CarImages.CarListingId))
-//       .orderBy(desc(CarListing.id))
-//       .limit(10);
-
-//     const resp = Service.FormatResult(result);
-//     setCarList(resp);
-//     console.log(resp);
-//   };
-
-//   return (
-//     <div className='mx-auto px-4 lg:px-24'>
-//       <h1 className='text-3xl font-bold text-center mt-16 mb-7'>
-//         Most Searched Cars
-//       </h1>
-
-//       <Carousel>
-//         <CarouselContent className="flex flex-wrap justify-center gap-4">
-//           {CarList.map((car, index) => (
-//             <CarouselItem 
-//               key={index} 
-//               className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4" // Responsive grid for car items
-//             >
-//               <CarItem car={car} />
-//             </CarouselItem>
-//           ))}
-//         </CarouselContent>
-//         <CarouselPrevious />
-//         <CarouselNext />
-//       </Carousel>
-//     </div>
-//   );
-// }
-
-// export default MostSearchedCar;
-

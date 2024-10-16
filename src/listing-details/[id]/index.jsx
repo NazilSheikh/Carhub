@@ -45,7 +45,7 @@ const GetListingDetail=async()=>
         <Header/>
         {/* on the click on any card item for cars we need too navigate to caritems  */}
         {/* //go in caritems WRAP UP IN LINK */}
-        <div  className='p-10 md:px-20' >
+        <div  className='p-4 md:px-8  ' >
           {/* 2 now this detailheader component will show the header that is title car name and all  */}
           <DetailHeader carDetail={carDetail}/>
         {/* this part or component is below the header which in itself cantains to thing left and right componnent */}
@@ -87,7 +87,9 @@ const GetListingDetail=async()=>
               
         </div>
               {/* i wannt to show the the recently most search card froM HOME->MOSTSEARCHDEDCARS FILE  */}
+           
              <MostSearchedCar/> 
+
         </div>
         <Footer/>
     </div>
