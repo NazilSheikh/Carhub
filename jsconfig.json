@@ -1,0 +1,10 @@
+// generally we had pasted it from shadcn ui  there is whole docs what you need to do to install it 
+
+{
+    "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
